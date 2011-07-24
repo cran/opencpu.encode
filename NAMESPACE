@@ -1,0 +1,2 @@
+export(opencpu.decode)
+export(opencpu.encode)
