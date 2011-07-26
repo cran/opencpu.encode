@@ -45,7 +45,7 @@ packageObject <- function(obj, datetime_encode){
 				"function" = deparse(unclass(obj)),
 				"name" = deparse(unclass(obj)),
 				"symbol" = deparse(unclass(obj)),
-				"complex" = list(Re=Re(as.vector(unclass(obj), mode = "complex")), Im=Im(as.vector(unclass(obj), mode = "complex"))),
+				"complex" = list(real=Re(as.vector(unclass(obj), mode = "complex")), imaginary=Im(as.vector(unclass(obj), mode = "complex"))),
 				"expression" = as.character(unclass(obj)),					
 				warning("No encoding has been defined for objects with encoding mode ",encoding.mode, " and will be skipped.")	
 			)			

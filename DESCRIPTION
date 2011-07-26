@@ -5,9 +5,9 @@ Title: opencpu object encoder/decoder
 Type: Package
 Author: Jeroen Ooms
 Description: Encodes R objects to a standardized JSON format
-Version: 0.1
-Date: 2011-07-24
+Version: 0.11
+Date: 2011-07-26
 Depends: methods, RJSONIO, base64
-Packaged: 2011-07-24 16:32:21 UTC; jeroen
+Packaged: 2011-07-27 09:56:01 UTC; jeroen
 Repository: CRAN
-Date/Publication: 2011-07-24 18:37:27
+Date/Publication: 2011-07-27 10:52:47

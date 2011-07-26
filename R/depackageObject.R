@@ -23,7 +23,7 @@ depackageObject <- function(obj, safe){
 			"numeric" = as.numeric(null2na(obj$value)),
 			"double" = as.double(null2na(obj$value)),
 			"character" = as.character(null2na(obj$value)),
-			"complex" = complex(real=obj$value$Re, imaginary=obj$value$Im),			
+			"complex" = complex(real=obj$value$real, imaginary=obj$value$imaginary),			
 			"list" = lapply(obj$value, depackageObject, safe=safe),
 			stop("Switch falling through for encode.mode: ", encode.mode)
 		);
