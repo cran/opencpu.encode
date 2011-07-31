@@ -5,7 +5,7 @@
 
 
 setMethod("toJSON", "logical",
-	function(x, container = TRUE, collapse = "\n", ..., .level = 1L) {
+	function(x, container = TRUE, collapse = "\n", ..., .level = 1L, .withNames=F) {
 		tmp = ifelse(x, "true", "false");
 
 		if(any(missings <- !is.finite(x))){

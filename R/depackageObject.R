@@ -25,7 +25,7 @@ depackageObject <- function(obj, safe){
 			"character" = as.character(null2na(obj$value)),
 			"complex" = complex(real=obj$value$real, imaginary=obj$value$imaginary),			
 			"list" = lapply(obj$value, depackageObject, safe=safe),
-			stop("Switch falling through for encode.mode: ", encode.mode)
+			stop("Switch falling through for encode.mode: ", obj$encode.mode)
 		);
 	} else if(obj$encode.mode %in% encodes.language){
 		if(safe){
@@ -35,7 +35,7 @@ depackageObject <- function(obj, safe){
 				"expression" = parse(text=obj$value),
 				"language" = parse(text=unlist(obj$value)), #results in an expression
 				"function" = parse(text=unlist(obj$value)), #results in an expression			
-				stop("Switch falling through for encode.mode: ", encode.mode)			
+				stop("Switch falling through for encode.mode: ", obj$encode.mode)			
 			);	
 		} else {
 			mydata <- switch(obj$encode.mode,
@@ -44,12 +44,12 @@ depackageObject <- function(obj, safe){
 				"expression" = parse(text=obj$value),
 				"language" = parse(text=unlist(obj$value)), #results in an expression
 				"function" = eval(parse(text=unlist(obj$value))), #results in an evaluation!!	
-				stop("Switch falling through for encode.mode: ", encode.mode)	
+				stop("Switch falling through for encode.mode: ", obj$encode.mode)	
 			);
 		}
 	}
 	else {
-		stop("Unknown encode.mode: ", encode.mode, "\n");
+		stop("Unknown encode.mode: ", obj$encode.mode, "\n");
 	}
 	
 	attrib <- lapply(obj$attributes, depackageObject, safe=safe);

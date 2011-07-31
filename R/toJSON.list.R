@@ -5,7 +5,7 @@
 
 #override toJSON.list to avoid the unpredictable boxing behaviour
 setMethod("toJSON", "list",
-	function(x, collapse = "\n", ..., .level = 1L) {
+	function(x, collapse = "\n", ..., .level = 1L, .withNames=F) {
 		# Emtpy list:
 		if(length(x) == 0) {
 			return(if(is.null(names(x))) "[]" else "{}")

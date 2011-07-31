@@ -5,7 +5,7 @@
 
 
 setMethod("toJSON", "numeric",
-	function(x, container = TRUE, collapse = "\n", digits = 5, NA_encode = TRUE, ..., .level = 1L) {
+	function(x, container = TRUE, collapse = "\n", digits = 5, NA_encode = TRUE, ..., .level = 1L, .withNames=F) {
 		tmp = trim(formatC(x, digits = digits));
 		
 		if(any(missings <- !is.finite(x))){

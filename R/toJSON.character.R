@@ -5,7 +5,7 @@
 
 
 setMethod("toJSON", "character",
-	function(x, container = TRUE, collapse = "\n", digits = 5, ..., .level = 1L) {
+	function(x, container = TRUE, collapse = "\n", digits = 5, ..., .level = 1L, .withNames=F) {
 		
 		tmp <- x
 		tmp = gsub('\\', '\\\\', tmp, fixed=T);
