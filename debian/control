@@ -1,0 +1,11 @@
+Source: opencpu.encode 
+Section: gnu-r
+Priority: optional
+Maintainer: Jeroen Ooms <jeroenooms@gmail.com>
+Build-Depends: debhelper (>= 7.0.0), r-base-dev (>= 2.12.1), cdbs
+Standards-Version: 3.9.1
+
+Package: r-cran-opencpu.encode 
+Architecture: all
+Depends: r-base-core (>= 2.12.1), r-cran-rjsonio, r-cran-base64
+Description: Opencpu object encoder  

@@ -11,6 +11,7 @@
 #' Please use opencpu.encode instead.
 #'  
 #' @importFrom RJSONIO fromJSON
+#' @importFrom base64 encode decode
 #' @export fromJSON
 #' @export asJSON
 #'  
@@ -32,5 +33,7 @@
 
 
 setGeneric("asJSON",
-		function(x, container = TRUE, collapse = "\n", ...)  
-			standardGeneric("asJSON"))
+	function(x, container = TRUE, collapse = "\n", ...){  
+		standardGeneric("asJSON")
+	}
+);

@@ -106,7 +106,7 @@ Example: `c(pi, NA, NaN, 8, Inf, 10, -Inf, 10^100, 5.53*10^-83)`
 
 * Character -- A JSON array with double quoted character strings or null
  
-Example: `c("foo", NA", "bar", "")` 
+Example: `c("foo", NA, "bar", "")` 
 
 	{
 	    "encode.mode": "character",

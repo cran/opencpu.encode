@@ -9,8 +9,10 @@ setMethod("asJSON", "ANY",
 		if(isS4(x)) {
 			paste("{", paste(dQuote(slotNames(x)), sapply(slotNames(x), function(id) asJSON(slot(x, id), ...)), sep = ": "),
 		"}", collapse = collapse)
+		} else if(existsMethod("asJSON", class(unclass(x)))) {
+			return(asJSON(unclass(x), container = container, collapse=collapse, ...));			
 		} else {
-			stop("No method for converting ", class(x), " to JSON")
+			stop("No method for converting ", class(x), " to JSON");
 		}
 	}
 );

@@ -6,6 +6,10 @@
 setOldClass("scalar")
 setMethod("asJSON", "scalar",
 	function(x, ...) {
-		return(asJSON(unclass(x), container=FALSE, ...));			
+		if(length(x) ==1){
+			return(asJSON(unclass(x), container=FALSE, ...));
+		} else {
+			return(asJSON(unclass(x), ...));
+		}
 	}
 );
