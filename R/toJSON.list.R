@@ -3,15 +3,15 @@
 # Author: jeroen
 ###############################################################################
 
-#override toJSON.list to avoid the unpredictable boxing behaviour
-setMethod("toJSON", "list",
-	function(x, collapse = "\n", ..., .level = 1L, .withNames=F) {
+#override asJSON.list to avoid the unpredictable boxing behaviour
+setMethod("asJSON", "list",
+	function(x, collapse = "\n", ...) {
 		# Emtpy list:
 		if(length(x) == 0) {
 			return(if(is.null(names(x))) "[]" else "{}")
 		}
 		
-		els = sapply(x, toJSON, ..., .level = .level + 1L)
+		els = sapply(x, asJSON, ...)
 		
 		if(all(sapply(els, is.name)))
 			names(els) = NULL

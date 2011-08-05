@@ -4,8 +4,8 @@
 ###############################################################################
 
 
-setMethod("toJSON", "logical",
-	function(x, container = TRUE, collapse = "\n", ..., .level = 1L, .withNames=F) {
+setMethod("asJSON", "logical",
+	function(x, container = TRUE, collapse = "\n", ...) {
 		tmp = ifelse(x, "true", "false");
 
 		if(any(missings <- !is.finite(x))){

@@ -3,9 +3,9 @@
 # Author: jeroen
 ###############################################################################
 
-setOldClass("singlevalue")
-setMethod("toJSON", "singlevalue",
+setOldClass("scalar")
+setMethod("asJSON", "scalar",
 	function(x, ...) {
-		return(toJSON(unclass(x), container=FALSE, ...));			
+		return(asJSON(unclass(x), container=FALSE, ...));			
 	}
 );

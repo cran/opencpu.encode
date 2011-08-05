@@ -4,6 +4,6 @@
 ###############################################################################
 
 
-setMethod("asJSON", "NULL",
-	function(x, ...) {return("{}");}
-);
+as.scalar <- function(obj){
+	return(structure(obj, class=c(class(obj),"scalar")));
+}

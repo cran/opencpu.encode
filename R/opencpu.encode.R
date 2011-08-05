@@ -39,5 +39,5 @@
  
 
 opencpu.encode <- function(obj, NA_encode=TRUE, datetime_encode=TRUE, digits=5, collapse=" "){
-	return(toJSON(packageObject(obj, datetime_encode), NA_encode=NA_encode, datetime_encode=datetime_encode, digits=digits, collapse=collapse));
+	return(asJSON(packageObject(obj, datetime_encode), NA_encode=NA_encode, datetime_encode=datetime_encode, digits=digits, collapse=collapse));
 }

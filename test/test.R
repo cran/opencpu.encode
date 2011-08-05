@@ -4,16 +4,10 @@
 ###############################################################################
 
 
-# TODO: Add comment
-# 
-# Author: jeroen
-###############################################################################
-
-
-library(rweb.encode);
+library(opencpu.encode);
 
 #simple test
-identical(rweb.decode(rweb.encode(cars)), cars)
+identical(opencpu.decode(opencpu.encode(cars)), cars)
 
 #Common datastructures
 #note that because of rounding, randomness and environments, 'identical' is actually too strict
@@ -31,13 +25,16 @@ myobject <- list(
 		somemissings = c(1,2,NA,NaN,5, Inf, 7 -Inf, 9, NA),
 		myrawvec = charToRaw("This is a test")
 );
-identical(rweb.decode(rweb.encode(myobject)), myobject)
+identical(opencpu.decode(opencpu.encode(myobject)), myobject)
 
 #language objects
 ll <- list(a = expression(x^2 - 2*x + 1), b = as.name("Jim"),
 		c = as.expression(exp(1)), d = call("lm", x~y), e=lm);
 sapply(ll, storage.mode);
-rweb.decode(rweb.encode(ll))
+opencpu.decode(opencpu.encode(ll))
+
+#this should pass the validators
+cat(opencpu.encode(ll));
 
 #Dates and time
 now <- Sys.time();
@@ -45,13 +42,13 @@ today <- as.Date(now);
 gmt <- as.POSIXlt(now);
 
 ## dates and times
-cat(rweb.encode(now));
-cat(rweb.encode(today));
-cat(rweb.encode(gmt));
+cat(opencpu.encode(now));
+cat(opencpu.encode(today));
+cat(opencpu.encode(gmt));
 
 # datetime_encode
-cat(rweb.encode(today, datetime=F));
+cat(opencpu.encode(today, datetime=F));
 
 #something advanced
 myglm <- glm(Sepal.Length ~ ., data=iris);
-cat(rweb.encode(myglm));
+cat(opencpu.encode(myglm));

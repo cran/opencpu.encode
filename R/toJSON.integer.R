@@ -3,8 +3,8 @@
 # Author: jeroen
 ###############################################################################
 
-setMethod("toJSON", "integer",
-	function(x, container = TRUE, collapse = "\n  ", ..., .level = 1L, .withNames=F) {
+setMethod("asJSON", "integer",
+	function(x, container = TRUE, collapse = "\n  ", ...) {
 		tmp <- as.character(x);
 
 		if(any(missings <- !is.finite(x))){

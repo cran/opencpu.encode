@@ -1,2 +1,5 @@
+importFrom(RJSONIO, fromJSON)
 export(opencpu.decode)
 export(opencpu.encode)
+export(fromJSON)
+export(asJSON)

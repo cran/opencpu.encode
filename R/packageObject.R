@@ -26,7 +26,7 @@ packageObject <- function(obj, datetime_encode){
 				
 	return(
 		list(
-			encode.mode = structure(encoding.mode, class="singlevalue"), #singlevalue prevents boxing during toJSON
+			encode.mode = structure(encoding.mode, class="scalar"), #scalar prevents boxing during asJSON
 			attributes = givename(lapply(attributes(obj), packageObject, datetime_encode=datetime_encode)),
 			value = switch(encoding.mode,
 				"Date" = as.character(obj),
@@ -51,5 +51,4 @@ packageObject <- function(obj, datetime_encode){
 			)			
 		)
 	);	
-
 }
