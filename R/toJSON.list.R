@@ -20,7 +20,7 @@ setMethod("asJSON", "list",
 			return(
 				paste(
 					sprintf("{%s", collapse),
-					paste(dQuote(names(x)), els, sep = ": ", collapse = sprintf(",%s", collapse)),
+					paste(dQuote(json.escape(names(x))), els, sep = ": ", collapse = sprintf(",%s", collapse)),
 					sprintf("%s}", collapse)
 				)
 			);

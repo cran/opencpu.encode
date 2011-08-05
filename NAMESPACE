@@ -1,7 +1,8 @@
+export(asJSON)
 export(as.scalar)
+export(fromJSON)
 export(opencpu.decode)
 export(opencpu.encode)
-importFrom(base64, encode, decode);
-importFrom(RJSONIO, fromJSON)
-export(fromJSON)
-export(asJSON)
+importFrom(base64,decode)
+importFrom(base64,encode)
+importFrom(RJSONIO,fromJSON)
